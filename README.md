@@ -53,13 +53,18 @@ prediction
 
 Contact
 =========
-Please feel free to contact us if you need any help: flluo@mail.ustc.edu.cn
+Please feel free to contact us if you need any help: behrouz.shamsaei@uc.edu
 
 Process to run it via Virtualenv
 =========
 virtualenv -p python3 env
+
 source env/bin/activate
+
 pip3 install -r requirements.txt
+
 pip3 install sklearn
+
 python3 predict.py
+
 deactivate
