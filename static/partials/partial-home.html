@@ -1,0 +1,32 @@
+<!--<div class="jumbotron text-center">
+    <!--<h1>The Homey Page</h1>-->
+    <!--<p>This page demonstrates <span class="text-danger">nested</span> views.</p>-->
+    <!---->
+    <!--<a ui-sref=".list" class="btn btn-primary">List</a>-->
+    <!--<a ui-sref=".paragraph" class="btn btn-danger">Paragraph</a>-->
+
+<div class="container">
+    <div class="row">
+        <div class="container" style="margin-top: 20px;margin-left: 0px;">
+            <h3>Select Gene Name:</h3>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+            <div class="input-group">
+                <div class="form-group">
+                    <input class="form-control autocomplete" ng-model="searchText" placeholder="Search for..." />
+                </div>
+
+            <!--<input ng-options="item for item in perturbations" ng-model="selected"> ng-click="goToExplore(ctrl.selectedPerturbation)" -->
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button" ng-click= "ctrl.querySearch(searchText)" >Submit</button>
+                </span>
+            </div>
+
+        </div><!-- /.col-lg-6 -->
+    </div>
+</div>
+
+
+<!--</div>
+
+<div ui-view></div>

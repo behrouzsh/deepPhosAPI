@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+
+    <!-- CSS (load bootstrap) -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <style>
+        .navbar {
+            border-radius: 0;
+        }
+    </style>
+
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="icon" href="static/assets/favicon.ico"/>
+    <title>Angular directives for Bootstrap</title>
+    <meta name="description"
+          content="AngularJS (Angular) native directives for Bootstrap. Small footprint (5kB gzipped!), no 3rd party JS dependencies (jQuery, bootstrap JS) required! Widgets: Accordion, Alert, Buttons, Carousel, Collapse, Dateparser, Datepicker, Datepicker Popup, Dropdown, Modal, Pager, Pagination, Popover, Position, Progressbar, Rating, Tabs, Timepicker, Tooltip, Typeahead, ">
+    <meta name="google-site-verification" content="7lc5HyceLDqpV_6oNHteYFfxDJH7-S3DwnJKtNUKcRg"/>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/0.6.7/fastclick.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.0.0/FileSaver.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jszip/2.4.0/jszip.min.js"></script>
+
+    <!--<script src="http://code.angularjs.org/1.2.13/angular.js"></script>-->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+    <!--<script src="//ajax.googleapis.com/ajax/libs/angular-ui-router/1.6.1/angular-ui-router.min.js"></script>-->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.18/angular-ui-router.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-animate.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-touch.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-sanitize.js"></script>
+
+    <!-- Clustergrammer -->
+    <script src="static/clustergrammer/d3.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="static/clustergrammer/underscore-min.js"></script>
+    <script src="static/clustergrammer/underscore.strings.js"></script>
+    <link rel="stylesheet" href="static/clustergrammer/font-awesome.min.css">
+
+    <!-- d3_clustergram.js -->
+    <script src='static/clustergrammer/clustergrammer.js'></script>
+    <!-- load clustergram -->
+    <script src='static/clustergrammer/load_clustergram.js'></script>
+    <script src='static/clustergrammer/Enrichrgram.js'></script>
+    <script src='static/clustergrammer/send_to_Enrichr.js'></script>
+    <script src='static/clustergrammer/hzome_functions.js'></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="static/clustergrammer/clustergrammer.css">
+
+
+    <script src="static/ui-bootstrap/ui-bootstrap-tpls-2.5.0.min.js"></script>
+    <script src="static/assets/plunker.js"></script>
+
+
+    <!-- JS (load angular, ui-router, and our custom js file) -->
+    <!--<script src="http://code.angularjs.org/1.2.13/angular.js"></script>-->
+    <!--<script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>-->
+
+   <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.css" rel="stylesheet"/>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/css/bootstrap.css" rel="stylesheet"/>
+
+
+     <!--<link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">-->
+
+    <!-- jQuery library -->
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+    <!--<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>-->
+    <!--<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>-->
+    <!--<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.js"></script>-->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/js/bootstrap.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+
+    <script src="static/app.js"></script>
+
+
+    <link rel="stylesheet" href="static/assets/rainbow.css"/>
+    <link rel="stylesheet" href="static/assets/demo.css"/>
+
+
+    <base href="/">
+</head>
+
+<!-- apply our angular app to our site -->
+<body>
+<div id="superContainer">
+    <div id="ng-cloak" ng-controller="MainCtrl">
+    <!-- NAVIGATION -->
+    <nav class="navbar navbar-inverse" role="navigation" style="background-color: black">
+        <div class="navbar-header">
+            <a class="navbar-brand" ui-sref="#">AngularUI Router</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a ui-sref="home">Home</a></li>
+            <li><a ui-sref="about">About</a></li>
+            <li><a ui-sref="clustergram">Clustergram</a></li>
+            <li><a ui-sref="bootstrap">Bootstrap</a></li>
+        </ul>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <!-- THIS IS WHERE WE WILL INJECT OUR CONTENT ============================== -->
+    </div>
+
+    <div id="body">
+
+        <div ui-view></div>
+        <h1>Upload Files</h1>
+
+        <form action="handle_form" method="post" enctype="multipart/form-data">
+            <input type="file" name="file">
+            <input type="submit" value="Upload">
+        </form>
+    </div>
+
+    <div id="footer" style="background-color: black">
+            <div class="container-fluid" style="background-color: black">
+<!--            <div class="container" style="background-color: black">-->
+
+                <!--<div class="row">-->
+                <div class="col-md-12">
+                    <div class="form-group col-sm-6" style="padding-left: 0px;">
+                        <!--<p class="fh5co-left">-->
+                        <p class="fh5co-left" style="color:whitesmoke;font-size: 15px">
+                            Sig2Lead, An Interactive Bio/Chemoinformatics Tool to Assist Drug Discovery and Repurposing.
+                        </p>
+                        <br/>
+                        <span style="color: #e8f4f7">&copy; 2018 <a href="http://lincs-dcic.org/" target="_blank">DATA COORDINATION AND INTEGRATION CENTER.</a></span>
+                        <br/>
+                        <span class="fh5co-right" style="color: #e8f4f7">Developed within NIH funded <a
+                                href="http://www.lincsproject.org/" target="_blank">LINCS</a> project.
+                                </span>
+                    </div>
+                    <div class="form-group col-sm-4" style="padding-left: 0px;">
+
+                        <p class="fh5co-left" style="color:whitesmoke;font-size: 15px">
+                            LINCS Tools
+                        </p>
+                        <br/>
+                        <span> <a href="http://ilincs.org/" target="_blank">iLINCS</a></span>
+                        <br/>
+                        <span> <a href="http://pinet-server.org/" target="_blank">piNET</a></span>
+                        <br/>
+                        <span> <a href="http://lincsproteomics.org/" target="_blank">LINCS Proteomics</a></span>
+                        <br/>
+
+
+                        <span> <a href="http://lincsportal.ccs.miami.edu/dcic-portal/"
+                                  target="_blank">LINCS Data Portal</a></span>
+                        <br/>
+                        <span> <a href="http://amp.pharm.mssm.edu/Enrichr/" target="_blank">Enrichr</a></span>
+                        <br/>
+
+                    </div>
+                    <div class="form-group col-sm-2" style="padding-left: 0px;">
+                        <!--</p>-->
+                        <!--<p class="fh5co-right">-->
+                        <p class="fh5co-left" style="color:whitesmoke;font-size: 15px">
+                            Support
+                        </p>
+                        <br/>
+                        <span>
+                            <a href="mailto:behrouz.shamsaei@uc.edu?subject=Support">
+                                Contact</a>
+
+                            </span>
+                    </div>
+                    <!--</p>-->
+                </div>
+                <!--</div>-->
+<!--           </div>-->
+            </div>
+    </div>
+</div>
+
+
+<!--        <div class="text-center">-->
+<!--            <p>A tutorial by <a href="http://scotch.io" target="_blank">scotch.io</a></p>-->
+<!--            <p>View the tutorial: <a href="http://scotch.io/tutorials/javascript/angular-routing-using-ui-router"-->
+<!--                                    target="_blank">AngularJS Routing using UI-Router</a></p>-->
+<!--        </div>-->
+
+</body>
+</html>
