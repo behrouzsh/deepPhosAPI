@@ -26,6 +26,19 @@ from keras.layers.normalization import BatchNormalization
 from keras.regularizers import l2
 import copy
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 def predict_for_deepphos(file_name,sites,predictFrame = 'general',
                          hierarchy=None, kinase=None):
     '''
@@ -542,7 +555,7 @@ if __name__ == '__main__':
 
 
     # threaded should be false to reload the weights in
-    app.run(debug=False, threaded=False)
+    app.run(host='0.0.0.0', debug=False, threaded=False)
     #app.run(debug=True, use_reloader=False)
 
 
