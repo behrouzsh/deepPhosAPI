@@ -1,4 +1,4 @@
-tensorflow==1.13.0rc1
+tensorflow==2.5.3
 keras==2.0.0
 numpy>=1.8.0
 pandas==0.25.3
